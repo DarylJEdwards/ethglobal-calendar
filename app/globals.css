@@ -1,0 +1,61 @@
+@import "flag-icons/css/flag-icons.min.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-sans);
+}
+
+html,
+body {
+  background-color: #03070d;
+  color: #e8eef7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Animated stadium-night backdrop. */
+.stadium-bg {
+  background:
+    radial-gradient(1200px 600px at 12% -10%, rgba(56, 189, 248, 0.16), transparent 60%),
+    radial-gradient(1000px 700px at 100% 0%, rgba(168, 85, 247, 0.14), transparent 55%),
+    radial-gradient(900px 700px at 50% 120%, rgba(34, 197, 94, 0.12), transparent 60%),
+    linear-gradient(180deg, #03070d 0%, #060c16 50%, #03070d 100%);
+  background-size: 200% 200%;
+  animation: gradient-pan 22s ease infinite;
+}
+
+/* Frosted-glass surface used by cards. */
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-strong {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fi {
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
+  background-size: cover;
+}
+
+/* Subtle scrollbar for tickers. */
+.scroll-x::-webkit-scrollbar {
+  height: 6px;
+}
+.scroll-x::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 99px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stadium-bg {
+    animation: none;
+  }
+}
